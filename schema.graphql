@@ -1,0 +1,42 @@
+type FaucetVault_CooldownToggled {
+  id: ID!
+  enabled: Boolean!
+}
+
+type FaucetVault_CooldownUpdated {
+  id: ID!
+  newCooldown: BigInt!
+}
+
+type FaucetVault_EthClaimed {
+  id: ID!
+  user: String!
+  amount: BigInt!
+}
+
+type FaucetVault_EthDeposited {
+  id: ID!
+  depositor: String!
+  amount: BigInt!
+}
+
+type FaucetVault_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type FaucetVault_TokensClaimed {
+  id: ID!
+  token: String!
+  user: String!
+  amount: BigInt!
+}
+
+type FaucetVault_TokensDeposited {
+  id: ID!
+  token: String!
+  depositor: String!
+  amount: BigInt!
+}
+

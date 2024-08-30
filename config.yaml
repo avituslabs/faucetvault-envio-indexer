@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: faucetVault
+networks:
+- id: 30732
+  rpc_config:
+    url: https://mevm2.devnet.imola.movementlabs.xyz
+    initial_block_interval: 1
+    backoff_multiplicative: 0.8
+    acceleration_additive: 1
+    interval_ceiling: 3
+    backoff_millis: 5000 
+    query_timeout_millis: 10000 
+  start_block: 4699263
+  end_block: null
+  contracts:
+  - name: FaucetVault
+    address:
+    - 0x3cEfd82938c8cc97C334aeA44b572C173EEe2D50
+    handler: src/EventHandlers.ts
+    events:
+    - event: CooldownToggled(bool enabled)
+    - event: CooldownUpdated(uint256 newCooldown)
+    - event: EthClaimed(address indexed user, uint256 amount)
+    - event: EthDeposited(address indexed depositor, uint256 amount)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: TokensClaimed(address indexed token, address indexed user, uint256 amount)
+    - event: TokensDeposited(address indexed token, address indexed depositor, uint256 amount)
+rollback_on_reorg: false
