@@ -15,7 +15,7 @@ networks:
   contracts:
   - name: FaucetVault
     address:
-    - 0x3cEfd82938c8cc97C334aeA44b572C173EEe2D50
+    - 0xF53C0Ba1461e5039628D39C66DB6723786F5D41E
     handler: src/EventHandlers.ts
     events:
     - event: CooldownToggled(bool enabled)
